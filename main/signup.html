@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Nunito:400,700" rel="stylesheet">
+    <style>
+        *{
+            font-family: "Nunito", sans-serif;
+        }
+        body{
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../main/images/login_bg.avif");
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            text-align: center;
+            height: 500px;
+            width: 500px;
+            border: 1px solid #116A7B;
+            border-radius: 50px;
+            color: #C2DEDC;
+            background: linear-gradient(rgba(17, 106, 123, 0.5), rgba(17, 106, 123, 0.5));
+            margin: 50px;
+            margin-bottom: 29px;
+            align-items: center;
+            justify-content: center;
+        }
+        h1{
+            margin-bottom: 32px;
+            margin-top: 50px;
+            text-align: center;
+        }
+        input, select{
+            width: 250px;
+            border-radius: 15px;
+            border-width: 0.5px;
+            padding: 16px 1px;
+            margin-bottom: 16px;
+            outline: none;
+            border: none;
+            background-color: #ECE5C7;
+            color: #116A7B;
+        }
+        button{
+            width: 50%;
+            padding: 16px 32px;
+            font-weight: bold;
+            font-size: 18px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            cursor: pointer;
+            background: #CDC2AE;
+            color: #116A7B;
+        }
+        button:hover{
+            background-color: #C2DEDC;
+        }
+        button:active{
+            transform: scale(0.98);
+        }
+        p{
+            text-align: center;
+        }
+        a{
+            color: #C2DEDC;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <form action="signup.php" method="post" onsubmit="return validate()">
+            <input required type="text" placeholder="Username" name="uname"><br>
+            <input required type="password" id="pass1" placeholder="Password" name="upass1"><br>
+            <input required type="password" id="pass2" placeholder="Re-type Password" name="upass2"><br>
+            <select name="usertype">
+                <option value="Seller">Seller</option>
+                <option value="Buyer">Buyer</option>
+            </select><br>
+            <button>Signup</button>
+        </form>
+        <p><a href="login.html">Already Have An Account? Log In</a></p>
+    </div>
+
+    <script>
+        pass1Obj=document.getElementById("pass1")
+        pass2Obj=document.getElementById("pass2")
+        function validate(){
+            if(pass1Obj.value==pass2Obj.value){
+                return true
+            }
+            else{
+                alert("Password Mismatch");
+                return false
+            }
+        }
+    </script>
+</body>
+</html>
